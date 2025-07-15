@@ -1,0 +1,65 @@
+<!-- dogs.html -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dogs - PetSMart</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>PetSMart</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dogs.html">Dogs</a>
+      <a href="cats.html">Cats</a>
+      <a href="birds.html">Birds</a>
+    </nav>
+  </header>
+
+  <div class="search-container">
+  <input type="text" id="searchInput" placeholder="Search for a product..." onkeyup="searchProducts()">
+</div>
+
+  <main>
+    <h2>Top Picks for Dogs</h2>
+    
+    <div class="product-card">
+      <img src="pet hair remover.jpg" alt="Pet hair remover">
+      <h3>Pet Hair Remover and Reusable Lint Roller</h3>
+      <p>Cat and Dog Hair Remover for Furniture, Couch, Carpet, Clothing and Bedding - Portable, Multi-Surface Fur Removal Tool (White)</p>
+      <a href="https://www.amazon.com/Pet-Dog-Cat-Hair-Remover-Couch/dp/B00BAGTNAQ/ref=sr_1_7?dib=eyJ2IjoiMSJ9.Ae4wzzm7vBU_pATghsnBkr3BHJun_r3r5Yi4UF69quJdtFdQ1RG7vutEr5qfR9iaIdevaJQtH7hupZ7Ms_VDdQbzv9GO6MZ4a7sIbb-Eor5OraRqoQ1IC1LOHylfque8q3wS-036i9CJOEcbGseFX21FUdtXKxquTHZzQIOcZpXOAguy9KVlTRXJG32FFVNS-PsVqyohKzM7q-FjpDDPdTXUc6w9Cgilx5YQ7-sThx4RBFb0J7pB3mnbGAU0iIr_dDlsVZhNGhFX37Qr7dp09YSl-RncrTTRKuARyoKR6kA.Porz_sUQQXVJ1BoF8PlTKMKrlfw9iHRniXXjSEjgURU&dib_tag=se&keywords=pet%2Bproducts&qid=1752490708&sr=8-7&th=1" class="buy-button" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="product-card">
+      <img src="ORAVET.jpg" alt="ORAVET Dental Chews">
+      <h3>ORAVET Dental Chews</h3>
+      <p>Best for Dogs, Oral Care and Hygiene Chews (Small Dogs, 10-24 lbs.) Blue Pouch, 30 Count</p>
+      <a href="https://www.amazon.com/Merial-Oravet-Dental-Hygiene-Treats/dp/B07GC4WP3Z/ref=sr_1_17?dib=eyJ2IjoiMSJ9.Ae4wzzm7vBU_pATghsnBkr3BHJun_r3r5Yi4UF69quJdtFdQ1RG7vutEr5qfR9iaIdevaJQtH7hupZ7Ms_VDdQbzv9GO6MZ4a7sIbb-Eor5OraRqoQ1IC1LOHylfque8q3wS-036i9CJOEcbGseFX21FUdtXKxquTHZzQIOcZpXOAguy9KVlTRXJG32FFVNS-PsVqyohKzM7q-FjpDDPdTXUc6w9Cgilx5YQ7-sThx4RBFb0J7pB3mnbGAU0iIr_dDlsVZhNGhFX37Qr7dp09YSl-RncrTTRKuARyoKR6kA.Porz_sUQQXVJ1BoF8PlTKMKrlfw9iHRniXXjSEjgURU&dib_tag=se&keywords=pet%2Bproducts&qid=1752490708&sr=8-17&th=1" class="buy-button" target="_blank">Buy on Amazon</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 PetSMart. All rights reserved.</p>
+    <p>As an Amazon Associate, PetSMart earns from qualifying purchases.</p>
+  </footer>
+
+  <script>
+function searchProducts() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const cards = document.querySelectorAll(".product-card");
+
+  cards.forEach(card => {
+    const title = card.querySelector("h3")?.innerText.toLowerCase() || "";
+    const description = card.querySelector("p")?.innerText.toLowerCase() || "";
+
+    if (title.includes(input) || description.includes(input)) {
+      card.style.display = "inline-block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+</script>
+</body>
+</html>

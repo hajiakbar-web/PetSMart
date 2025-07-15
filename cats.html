@@ -1,0 +1,65 @@
+<!-- cats.html -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cats - PetSMart</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>PetSMart</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dogs.html">Dogs</a>
+      <a href="cats.html">Cats</a>
+      <a href="birds.html">Birds</a>
+    </nav>
+  </header>
+
+  <div class="search-container">
+  <input type="text" id="searchInput" placeholder="Search for a product..." onkeyup="searchProducts()">
+</div>
+
+  <main>
+    <h2>Top Picks for Cats</h2>
+    
+    <div class="product-card">
+      <img src="cat litter.jpg" alt="Cat Litter Deodorizer">
+      <h3>Cat Litter Deodorizer | Odor Eliminator for Litter</h3>
+      <p>Smell Control for Cats | Non-Toxic & Safe for Kittens | Home Odor Neutralizer | Kitty Litter...</p>
+      <a href="https://www.amazon.com/Sprinkle-Sweep-Litter-Box-Deodorizer/dp/B0CMSXPWB6/ref=sr_1_2_sspa?dib=eyJ2IjoiMSJ9.Ixl60awGXFsUMAezfFBPKssyAg3LPU7yBNSEKHhFQeiOqGxOqQsR2yED2lKr0XSNA5_7sg-qHTQGSXEDyaaUkeSCjTldqZD3aPn6VUZf8bBSqlVPk_OjUf4T9aFG9Jv_oWrvK4xbk80GMn2bFIMaeWazqZvdDCl0YtcE62d0F7RhidJb7xUkvwyIdYYWiEUx-wIia-qhuI8TtLkXJcpJils77fXbPqLiInzBENN9PcF7iC1fXAkM6GuxzlieJ19HB_3q5sTBkp4Ngufm09t4QSxse3NEBPRzSh3OBTM840k.m1vt323hS99mWyOfGi6olWWjeFB9elql4AWmtZtkZn8&dib_tag=se&keywords=cat%2Bproducts&qid=1752494574&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1" class="buy-button" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="product-card">
+      <img src="warming cat bed.jpg" alt="Self-Warming Cat Bed">
+      <h3>Self-Warming Cat Bed</h3>
+      <p>Best for Indoor Cats & Small Dogs, Washable & Reflects Body Heat - Quilted Faux Fur Reflective Bed Mat - Gray, Small</p>
+      <a href="https://www.amazon.com/Furhaven-Pet-Heating-ThermaNAP-Self-Warming/dp/B06XF6VH2N/ref=sr_1_36?dib=eyJ2IjoiMSJ9.Ixl60awGXFsUMAezfFBPKssyAg3LPU7yBNSEKHhFQeiOqGxOqQsR2yED2lKr0XSNA5_7sg-qHTQGSXEDyaaUkeSCjTldqZD3aPn6VUZf8bBSqlVPk_OjUf4T9aFG9Jv_oWrvK4xbk80GMn2bFIMaeWazqZvdDCl0YtcE62d0F7RhidJb7xUkvwyIdYYWiEUx-wIia-qhuI8TtLkXJcpJils77fXbPqLiInzBENN9PcF7iC1fXAkM6GuxzlieJ19HB_3q5sTBkp4Ngufm09t4QSxse3NEBPRzSh3OBTM840k.m1vt323hS99mWyOfGi6olWWjeFB9elql4AWmtZtkZn8&dib_tag=se&keywords=cat%2Bproducts&qid=1752494574&sr=8-36&th=1" class="buy-button" target="_blank">Buy on Amazon</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 PetSMart. All rights reserved.</p>
+    <p>As an Amazon Associate, PetSMart earns from qualifying purchases.</p>
+  </footer>
+
+  <script>
+function searchProducts() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const cards = document.querySelectorAll(".product-card");
+
+  cards.forEach(card => {
+    const title = card.querySelector("h3")?.innerText.toLowerCase() || "";
+    const description = card.querySelector("p")?.innerText.toLowerCase() || "";
+
+    if (title.includes(input) || description.includes(input)) {
+      card.style.display = "inline-block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+</script>
+</body>
+</html>
